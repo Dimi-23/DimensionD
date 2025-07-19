@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dimensión Divertida</title>
+  <link href="style.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    /* 🧁 ESTILOS GENERALES */
+
+    /* 🎨 CONTENEDORES DE FONDO */
+        #bloque-dimension-divertida {
+      width: 100%;
+      height: 300px;
+      background-image: url('dd.png');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      border-radius: 10px 10px 0px 0px;
+    }
+    #bloque-dimension-verano {
+      width: 100%;
+      height: 300px;
+      background-image: url('db.png');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      border-radius: 10px 10px 0px 0px;
+    }
+    .ttcaca{
+      color: #1d0a49;
+    }
+
+    #bloque-dimension-verano {
+      margin-top: 40px;
+    }
+
+    /* ✨ TEXTO SUPERPUESTO */
+    .texto-dimension-divertida,
+    .texto-dimension-verano {
+      position: absolute;
+      bottom: 20px;
+      right: 10px;
+      color: white;
+      font-size: 70px;
+      font-weight: bold;
+      line-height: 1;
+      text-align: right;
+      text-shadow: -1px -1px 0 #000, 1px -1px 0 #000,
+                   -1px 1px 0 #000, 1px 1px 0 #000;
+    }
+
+    /* 🧩 MENÚ DESPLEGABLE */
+    .boton-desplegable-dimension,
+    .boton-desplegable-verano {
+      background-color: rgb(255, 255, 255);
+      padding: 15px;
+      text-align: center;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 18px;
+      border-top: 2px solid #ccc;
+      border-bottom: 1px solid #ccc;
+      border-radius: 0 0 10px 10px;
+    }
+
+    .contenido-desplegable-dimension,
+    .contenido-desplegable-verano {
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.4s ease;
+      border-radius: 10px;
+      background-color: rgba(255, 255, 255, 0.089);
+      padding: 0 15px;
+      font-size: 16px;
+      border-bottom: 1px solid #aaa;
+    }
+
+    .contenido-desplegable-dimension p,
+    .contenido-desplegable-verano p {
+      margin: 15px 0;
+      color: #ffffff;
+      text-align: left;
+    }
+
+    /* 📱 RESPONSIVE PARA MÓVILES */
+    @media screen and (max-width: 600px) {
+      .texto-dimension-divertida,
+      .texto-dimension-verano {
+        font-size: 40px;
+        bottom: 10px;
+        right: 5px;
+      }
+
+      .boton-desplegable-dimension,
+      .boton-desplegable-verano {
+        font-size: 16px;
+        padding: 10px;
+      }
+
+      .contenido-desplegable-dimension,
+      .contenido-desplegable-verano {
+        font-size: 14px;
+        padding: 0 10px;
+      }
+
+      #bloque-dimension-divertida,
+      #bloque-dimension-verano {
+        height: 200px;
+      }
+    }
+  </style>
+
+</head>
+<body class="fade-in">
+  <div class="background-container">
+    <div id="background-elements"></div>
+  </div>
+
+  <header class="header-container">
+    <div class="header-logo-group">
+      <img src="dimi.png" alt="Logo Dimensión Divertida" class="logo-image" />
+      <a href="index.html" style="text-decoration: none;">
+        <span class="logo-title">DIMENSIÓN<br>DIVERTIDA</span>
+      </a>
+    </div>
+    <button class="menu-toggle" aria-label="Abrir menú">&#9776;</button>
+    <nav class="nav-menu">
+      <a href="index.html" class="nav-link ">Inicio</a>
+      <a href="3.html" class="nav-link active">Programación</a>
+      <a href="2.html" class="nav-link">Entrevistas</a>
+      <a href="2.html" class="nav-link">Comentarios</a>
+    </nav>
+    <a href="https://www.elprat.digital/radio/programes/dimensio-divertida/">
+      <button class="btn-esuchar">ESCUCHAR</button>
+    </a>
+  </header>
+
+  <main>
+  <!-- 🎙️ DIMENSIÓN DIVERTIDA -->
+  <div id="bloque-dimension-divertida">
+    <div class="texto-dimension-divertida">
+      DIMENSION<br>DIVERTIDA
+    </div>
+  </div>
+  <div class="boton-desplegable-dimension" onclick="mostrarContenido('dimension')">
+    <p class="ttcaca">🎙️ Dimensión Divertida ▼</p>
+    
+  </div>
+  <div class="contenido-desplegable-dimension" id="contenido-dimension">
+        <p>¡Bienvenido a Dimensión Divertida, el programa que transforma tus sábados en una auténtica fiesta de buen rollo y música sin pausa!
+        <br>
+        <br>
+        Cada sábado a las 14:00 en Prat.Radio, Juan López te trae una mezcla refrescante de música animada, temazos que marcaron época y novedades que prometen ser los himnos del verano. Prepárate para bailar, cantar y disfrutar del espíritu veraniego estés donde estés.
+        <br>        </p>
+  </div>
+
+  <!-- 🌞 DIMENSIÓN VERANO -->
+  <div id="bloque-dimension-verano">
+    <div class="texto-dimension-verano">
+      DIMENSION<br>VERANO
+    </div>
+  </div>
+  <div class="boton-desplegable-verano" onclick="mostrarContenido('verano')">
+    <p class="ttcaca">🌞 Dimensión Verano ▼</p>
+  </div>
+  <div class="contenido-desplegable-verano" id="contenido-verano">
+        <p>🎶Cuando llega el calor...🎶  ¡también llega Dimensión Verano! Una edición especial del programa Dimensión Divertida pensada para acompañarte durante los meses más calurosos del año con el mejor ritmo y el mejor rollo.
+        <br>
+        <br>
+        Cada sábado a las 14:00 en Prat.Radio (91.6 FM), Juan López te guía por un universo sonoro donde suenan los grandes clásicos que marcaron época, los temazos que todos recordamos y las novedades musicales más potentes del momento.</p>
+  </div>
+  </main>
+
+  <footer class="footer-container">
+    <div class="footer-content">
+      <p class="footer-text">Puntos de encuentro</p>
+      <a href="#" class="footer-a">TIKTOK</a>,
+      <a href="#" class="footer-a">Instagram</a>,
+      <a href="#" class="footer-a">Facebook</a> y
+      <a href="#" class="footer-a">X</a>
+    </div>
+  </footer>
+  <script>
+    function mostrarContenido(seccion) {
+      const elemento = document.getElementById(`contenido-${seccion}`);
+      const abierto = elemento.style.maxHeight && elemento.style.maxHeight !== "0px";
+      elemento.style.maxHeight = abierto ? "0px" : elemento.scrollHeight + "px";
+    }
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>
